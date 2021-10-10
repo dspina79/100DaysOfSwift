@@ -57,3 +57,23 @@ teamMembers2["Gene"] = "Lead Vocals"
 // empty sets
 var mySet = Set<String>()
 
+
+// enumerations
+enum Sizes {
+    case Small
+    case Medium
+    case Large
+}
+
+let drinkSize = Sizes.Large
+
+
+enum Seasons {
+    case Autumn
+    case Winter
+    case Spring
+    case Summer
+}
+
+let currentSeason = Seasons.Autumn
+let nextSeason = Seasons.Winter
