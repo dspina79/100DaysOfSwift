@@ -32,3 +32,10 @@ myAge = 43 // fine
 
 // let = constant
 let hisName = "Bill"
+
+// type annotation
+let firstName: String = "Dave"
+let currentAge: Int = 42
+let bodyTemp: Double = 98.6
+let truthiness: Bool = true
+
