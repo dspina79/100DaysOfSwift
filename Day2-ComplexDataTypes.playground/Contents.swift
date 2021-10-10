@@ -27,3 +27,12 @@ myself.lastName // Anips
 myself.age = 42
 myself // (firstName "Dean", lastName "Anips", age 42)
 
+// dictionaries
+let ages = [
+    "John Miller": 39,
+    "Harriet Smith": 44,
+    "Lou Mostel": 28,
+    "Rachel Dockman": 30
+]
+
+ages["Lou Mostel"] // 28
