@@ -24,3 +24,11 @@ var myTruth = true
 // string interpolation
 var myName = "Dave"
 var salutation = "Hello, \(myName)"
+
+
+// constants
+var myAge = 42 // this is a variable and can be changed
+myAge = 43 // fine
+
+// let = constant
+let hisName = "Bill"
