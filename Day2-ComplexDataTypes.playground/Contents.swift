@@ -36,3 +36,24 @@ let ages = [
 ]
 
 ages["Lou Mostel"] // 28
+
+// using a default value when accessing
+ages["Tom"] // nil
+ages["Tom", default: 0] // 0
+
+
+// creating empty collection
+
+// empty array options
+let species = [String]()
+let species2 = Array<String>()
+
+// creating empty dictionary options
+var teamMembers = [String: String]()
+var teamMembers2 = Dictionary<String, String>()
+teamMembers["Paul"] = "Lead Guitar"
+teamMembers2["Gene"] = "Lead Vocals"
+
+// empty sets
+var mySet = Set<String>()
+
