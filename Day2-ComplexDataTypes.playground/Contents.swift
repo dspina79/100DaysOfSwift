@@ -18,3 +18,12 @@ managers[1] // Helen Pearson
 let colors = Set(["red", "blue", "yellow"])
 // duplicates are ignored
 let colors2 = Set(["red", "blue", "red", "magenta", "yellow", "blue"]) // only red, blue, magenta, yellow
+
+
+// tuples
+var myself = (firstName: "Dean", lastName: "Anips", age: 40)
+myself.0 // Dean
+myself.lastName // Anips
+myself.age = 42
+myself // (firstName "Dean", lastName "Anips", age 42)
+
