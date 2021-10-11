@@ -70,3 +70,29 @@ if firstCard + secondCard == 21 {
 } else {
     print("You got a \(firstCard + secondCard)")
 }
+
+// Combining Conditions with Logical Operators
+let personName1 = "Peter"
+let personName2 = "Paul"
+let personName3 = "Mary"
+
+// logical AND
+if personName1 == "Peter" && personName2 == "Henry" {
+    print("Peter and Henry are in the house.")
+} else {
+    print("The two guys I was looking for are not here.")
+} // prints The two guys I was lookign for are not here.
+
+// logical OR
+if personName1 == "Peter" || personName2 == "Henry" {
+    print("At least one of the guys is here.")
+} else {
+    print("The two guys I was looking for are not here.")
+} // prints At least one of the guys his here.
+
+// combining
+if personName1 == "Peter" && personName2 == "Paul" && personName3 == "Mary" {
+    print("You got a band!")
+} else {
+    print("You don't have a full band.")
+} // prints You got a band!
