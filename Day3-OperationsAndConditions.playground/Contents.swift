@@ -29,3 +29,26 @@ a %= c // 4
 
 var stringA = "Bob"
 stringA += " is a cool person" // Bob is a cool person
+
+// Comparison Operators
+let num1 = 20
+let num2 = 10
+
+// equality
+num1 == num2 // false
+num1 != num2 // true
+num1 == 20 // true
+
+// comparison
+num1 < num2 // false
+num1 <= num2 // false
+
+num1 > num2 // true
+num1 >= num2 //true
+
+num1 >= 20 //true
+num1 == 20
+
+// comparisons with strings
+"George" <= "Herbert" // true
+"George" > "Adam" // true
