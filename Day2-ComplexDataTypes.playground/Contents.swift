@@ -77,3 +77,16 @@ enum Seasons {
 
 let currentSeason = Seasons.Autumn
 let nextSeason = Seasons.Winter
+
+
+// assocaited valuies in an enumeration
+enum CourseResults {
+    case passed(grade: Int)
+    case failed
+    case incomplete
+    case attended
+}
+
+let johnsResults = CourseResults.passed(grade: 88)
+
+}
