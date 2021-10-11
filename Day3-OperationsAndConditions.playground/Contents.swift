@@ -52,3 +52,21 @@ num1 == 20
 // comparisons with strings
 "George" <= "Herbert" // true
 "George" > "Adam" // true
+
+// Conditions
+let firstCard = 11
+let secondCard = 10
+
+if firstCard + secondCard == 21 {
+    print("Blackjack!")
+} else {
+    print("You did not get 21")
+}
+
+if firstCard + secondCard == 21 {
+    print("Blackjack!")
+} else if firstCard + secondCard > 21 {
+    print("Bust!")
+} else {
+    print("You got a \(firstCard + secondCard)")
+}
