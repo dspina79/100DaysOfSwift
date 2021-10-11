@@ -155,3 +155,25 @@ default:
  You rolled at least a two.
  You rolled at least a one.
 */
+
+
+// Switch Statement with Range Operations
+// range operations
+// 0..<5 contains 0, 1, 2, 3, 4
+// 0...5 contains 0, 1, 2, 3, 4, 5
+
+let testScore = 90
+switch testScore {
+case 0..<59:
+    print("F")
+case 60..<70:
+    print("D")
+case 70..<80:
+    print("C")
+case 80..<90:
+    print("B")
+case 90...110:
+    print("A")
+default:
+    print("Unknown Score")
+} // prints A
