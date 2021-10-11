@@ -89,4 +89,35 @@ enum CourseResults {
 
 let johnsResults = CourseResults.passed(grade: 88)
 
+// enum raw values
+enum RomanNumerals: Int {
+    case i
+    case ii
+    case iii
+    case iv
+    case v
+    case vi
+    case vii
+    case viii
+    case ix
+    case x
 }
+
+let myNumber = RomanNumerals(rawValue: 3) // shows as iv which is odd
+
+// retrying with setting intial number
+enum RomanNumeralsTake2: Int {
+    case i = 1
+    case ii
+    case iii
+    case iv
+    case v
+    case vi
+    case vii
+    case viii
+    case ix
+    case x
+}
+
+
+let myNumber2 = RomanNumeralsTake2(rawValue: 3) // shows iii
