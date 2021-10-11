@@ -96,3 +96,62 @@ if personName1 == "Peter" && personName2 == "Paul" && personName3 == "Mary" {
 } else {
     print("You don't have a full band.")
 } // prints You got a band!
+
+
+// Ternary Operation
+let player1Score = 100
+let player2Score = 101
+print(player1Score > player2Score ? "Player 1 beat player 2" : "Player 2 beat player 1")
+// prints Player 2 beat player 1"
+
+
+// Switch Statement
+let diceRoll = 5
+switch diceRoll {
+case 1:
+    print("You rolled a one")
+case 2:
+    print("You rolled a two")
+case 3:
+    print("You rolled a three")
+case 4:
+    print("You rolled a four")
+case 5:
+    print("You rolled a five")
+case 6:
+    print("You rolled a six")
+default:
+    print("I have no idea what you rolled.")
+}
+// prints You rolled a five
+
+// Swtich with Fallthrough
+switch diceRoll {
+case 6:
+    print("You rolled a six")
+    fallthrough
+case 5:
+    print("You rolled at least a five.")
+    fallthrough
+case 4:
+    print("You rolled at least a four.")
+    fallthrough
+case 3:
+    print("You rolled at least a three.")
+    fallthrough
+case 2:
+    print("You rolled at least a two.")
+    fallthrough
+case 1:
+    print("You rolled at least a one.")
+default:
+    print("A dice was rolled.")
+}
+/*
+ prints
+ You rolled at least a five.
+ You rolled at least a four.
+ You rolled at least a three.
+ You rolled at least a two.
+ You rolled at least a one.
+*/
