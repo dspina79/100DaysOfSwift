@@ -121,3 +121,16 @@ enum RomanNumeralsTake2: Int {
 
 
 let myNumber2 = RomanNumeralsTake2(rawValue: 3) // shows iii
+
+
+// tesitng
+var myHighSores = Set([89, 92, 29, 82, 93, 99, 75, 89])
+myHighSores.insert(98)
+myHighSores.insert(98)
+myHighSores // {29, 89, 92, 82, 98, 99, 75, 93}
+
+
+// tuple testing
+var myFriend = (firstName: "Kate", lastName: "Mulgrew")
+myFriend.lastName = "Janeway"
+myFriend // (firstName "Kate", lastName "Janeway")
