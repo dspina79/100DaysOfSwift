@@ -69,3 +69,13 @@ print("Liftoff!")
  1
  Liftoff!
  */
+
+
+// repeat Loops - performs code in the brackets at least once
+
+var y = 10
+repeat {
+    print("Printing \(y)")
+} while y != 10
+// prints Printing 10
+
