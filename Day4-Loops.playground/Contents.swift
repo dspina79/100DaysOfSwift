@@ -43,3 +43,29 @@ for _ in 1...5 {
  In the loop!
  In the loop!
  */
+
+// while Loops
+
+var x = 10
+
+print("Counting down...")
+while x > 0 {
+    print(x)
+    x -= 1
+}
+print("Liftoff!")
+/*
+ prints:
+ Counting down...
+ 10
+ 9
+ 8
+ 7
+ 6
+ 5
+ 4
+ 3
+ 2
+ 1
+ Liftoff!
+ */
