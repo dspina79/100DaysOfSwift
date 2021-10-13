@@ -108,3 +108,37 @@ firstLoop: for firstNum in 1...100 {
 }
 // prints We found a product of 68. It's 1 x 68
 
+// Using continue to Move to the Next Item in a Loop
+
+for i in 1...15 {
+    if i % 5 == 0 {
+        continue
+    }
+    print("\(i) is a number that is not easily divisible by 5")
+}
+/*
+ prints:
+ 1 is a number that is not easily divisible by 5
+ 2 is a number that is not easily divisible by 5
+ 3 is a number that is not easily divisible by 5
+ 4 is a number that is not easily divisible by 5
+ 6 is a number that is not easily divisible by 5
+ 7 is a number that is not easily divisible by 5
+ 8 is a number that is not easily divisible by 5
+ 9 is a number that is not easily divisible by 5
+ 11 is a number that is not easily divisible by 5
+ 12 is a number that is not easily divisible by 5
+ 13 is a number that is not easily divisible by 5
+ 14 is a number that is not easily divisible by 5
+ */
+
+// Infinite Loops with while
+var counter = 0
+while true {
+    counter += 1
+    
+    if counter >= 200 {
+        print("Hit the 200th mark")
+        break
+    }
+}
