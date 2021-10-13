@@ -96,4 +96,15 @@ while z > 0 {
  The current number is 9
  */
 
+// Breaking Outer loops
+firstLoop: for firstNum in 1...100 {
+    secondLoop: for secondNum in 1...100 {
+        let prod = firstNum * secondNum
+        if prod == 68 {
+            print("We found a product of 68. It's \(firstNum) x \(secondNum)")
+            break firstLoop  // exits the outer loop
+        }
+    }
+}
+// prints We found a product of 68. It's 1 x 68
 
