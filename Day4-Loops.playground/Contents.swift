@@ -79,3 +79,21 @@ repeat {
 } while y != 10
 // prints Printing 10
 
+// Breaking a Loop
+
+var z = 10
+
+while z > 0 {
+    if z % 4 == 0 {
+        break // exits the loop
+    }
+    print("The current number is \(z)")
+    z -= 1
+}
+/*
+ prints:
+ The current number is 10
+ The current number is 9
+ */
+
+
