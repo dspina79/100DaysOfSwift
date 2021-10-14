@@ -22,3 +22,12 @@ func square(x: Int) -> Int {
 
 let squareVal = square(x: 7)
 print(squareVal) // prints 49
+
+
+// Parameter Labels
+func calcDistance(from x1: Int, to x2: Int) -> Int {
+    return abs(x2 - x1)
+}
+
+let dist = calcDistance(from: 5, to: 19)
+print("The distance is \(dist)") // prints 14
