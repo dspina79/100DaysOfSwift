@@ -47,3 +47,35 @@ func sayHello(to person: String, greet: String = "Hello") -> String {
 
 print(sayHello(to: "Dean")) // prints "Hello, Dean"
 print(sayHello(to: "Dean", greet: "Allo")) // prints "Allo, Dean"
+
+// Variadic Functions
+// functions that accept any number of variables of the same type
+
+func sumNumbers(nums: Int...) -> Int {
+    var total: Int = 0
+    for num in nums {
+        total += num
+    }
+    
+    return total
+}
+
+let testSum = sumNumbers(nums: 1, 3, 5, 7, 9)
+print("The sum is \(testSum)") // prints "The sum is 25"
+
+func writeNames(_ names: String...) {
+    for name in names {
+        print("\(name)")
+    }
+}
+
+writeNames("Lou", "Linda", "Leslie", "Lana", "Lois")
+/*
+ prints:
+ Lou
+ Linda
+ Leslie
+ Lana
+ Lois
+ 
+ */
