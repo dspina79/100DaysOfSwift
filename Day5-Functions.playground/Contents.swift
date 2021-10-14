@@ -79,3 +79,24 @@ writeNames("Lou", "Linda", "Leslie", "Lana", "Lois")
  Lois
  
  */
+
+
+// Throwing Exceptions
+enum MyMathError: Error {
+    case divideByZero
+}
+func divide(x: Int, y: Int) throws -> Int {
+    if y == 0 {
+        throw MyMathError.divideByZero
+    }
+    
+    return x / y
+}
+
+let quot1 = try? divide(x: 10, y: 2) // 5
+//let quot2 = try? divide(x: 10, y: 0)
+/*
+ ^^^ error
+ Playground execution terminated: An error was thrown and was not caught:
+ __lldb_expr_19.MyMathError.divideByZero
+ */
