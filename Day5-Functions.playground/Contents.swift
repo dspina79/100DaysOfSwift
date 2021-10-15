@@ -139,3 +139,36 @@ print("The double is \(refNum)") // prints The double is 78
 // let's do it again
 doubleNum(num: &refNum)
 print("The double is \(refNum)") // prints The double is 156
+
+
+// lets put things together
+enum SumError: Error {
+    case negativeNumberFound
+}
+
+func sumNumbers(nums: Int..., sumRegister: inout Int) throws {
+    for num in nums {
+        if num < 0 {
+            throw SumError.negativeNumberFound
+        } else {
+            sumRegister += num
+        }
+    }
+}
+
+var register = 0
+do {
+    try sumNumbers(nums: 5, 4, 10, 29, 1, 2, sumRegister: &register)
+    print("The sum is \(register)")
+    register = 0
+    try sumNumbers(nums: 5, 4, 10, -29, 1, 2, sumRegister: &register)
+    print("The sum is \(register)")
+    
+} catch {
+    print("An error occurred.")
+}
+/*
+ prints:
+ The sum is 51
+ An error occurred.
+ */
