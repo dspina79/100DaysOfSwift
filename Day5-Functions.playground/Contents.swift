@@ -124,3 +124,18 @@ do {
 }
 // prints Authentication Error
 
+
+// Changing Parameter Values with inout
+// similar to pass by reference
+
+func doubleNum(num: inout Int) {
+    num *= 2
+}
+
+// use ampersand (&) to identify the passed by refernece variable
+var refNum = 39
+doubleNum(num: &refNum)
+print("The double is \(refNum)") // prints The double is 78
+// let's do it again
+doubleNum(num: &refNum)
+print("The double is \(refNum)") // prints The double is 156
