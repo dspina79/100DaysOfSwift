@@ -94,9 +94,33 @@ func divide(x: Int, y: Int) throws -> Int {
 }
 
 let quot1 = try? divide(x: 10, y: 2) // 5
-//let quot2 = try? divide(x: 10, y: 0)
-/*
- ^^^ error
- Playground execution terminated: An error was thrown and was not caught:
- __lldb_expr_19.MyMathError.divideByZero
- */
+
+// Catching Errors
+do {
+    let quot2 = try divide(x: 10, y: 0)
+    print("The quotient is \(quot2)")
+} catch {
+    print("There was an error!")
+}
+// prints There was an error!
+
+enum LoginError: Error {
+    case invalidUsername
+    case invalidPassword
+}
+func authenticate(username: String, password: String) throws {
+    if username != "superuser" {
+        throw LoginError.invalidUsername
+    } else if password != "p@ssword123" {
+        throw LoginError.invalidPassword
+    }
+    print("You're IN!")
+}
+
+do {
+    try authenticate(username: "superuser", password: "blah")
+} catch {
+    print("Authentication Error")
+}
+// prints Authentication Error
+
