@@ -172,3 +172,52 @@ do {
  The sum is 51
  An error occurred.
  */
+
+
+// Trailing Closure Syntax
+// if the last parameter is a closure, the syntax is easier to write
+
+func runErrand(errand: () -> Void) {
+    print("I'm running errands...")
+    errand()
+    print("And now I'm done")
+}
+
+runErrand {
+    print("Buying the groceries.")
+}
+/*
+ prints:
+ I'm running errands...
+ Buying the groceries.
+ And now I'm done
+ */
+
+
+// it's optional but you can add parens
+runErrand() {
+    print("Taking the cat to the vet")
+}
+/*
+ prints:
+ I'm running errands...
+ Taking the cat to the vet
+ And now I'm done
+ */
+
+func singleMathOpp(x: Int, operation: (Int) -> Int) -> Int {
+    return operation(x)
+}
+
+let square = { (x: Int, y: Int) -> Int in
+    return x * x
+}
+
+let reverseSign = { (x: Int) -> Int in
+    return x * -1
+}
+
+let squareResult = singleMathOpp(x: 5, operation: square)
+print(squareResult) // 25
+let reverseSignResult = singleMathOpp(x: -3, operation: reverseSign)
+print(reverseSignResult) // 3
