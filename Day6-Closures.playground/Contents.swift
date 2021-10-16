@@ -18,9 +18,10 @@ let greet = { (name: String) in
 // field declarations are not needed
 greet("Dean") // prints Hello, Dean
 
-let sum = {(x: Int, y: Int) in
+let sum = {(x: Int, y: Int) -> Int in
     return x + y
 }
 
 let mySum = sum(3, 4) // 7
+print(mySum) // prints 7
 
