@@ -85,3 +85,87 @@ performMath(x: 6, y: 5, mathFunc: multIt)
  And the result is 30
  */
 
+
+// Trailing Closure Syntax
+// if the last parameter is a closure, the syntax is easier to write
+
+func runErrand(errand: () -> Void) {
+    print("I'm running errands...")
+    errand()
+    print("And now I'm done")
+}
+
+runErrand {
+    print("Buying the groceries.")
+}
+/*
+ prints:
+ I'm running errands...
+ Buying the groceries.
+ And now I'm done
+ */
+
+
+// it's optional but you can add parens
+runErrand() {
+    print("Taking the cat to the vet")
+}
+/*
+ prints:
+ I'm running errands...
+ Taking the cat to the vet
+ And now I'm done
+ */
+
+func singleMathOpp(x: Int, operation: (Int) -> Int) -> Int {
+    return operation(x)
+}
+
+let square = { (x: Int) -> Int in
+    return x * x
+}
+
+let reverseSign = { (x: Int) -> Int in
+    return x * -1
+}
+
+let squareResult = singleMathOpp(x: 5, operation: square)
+print(squareResult) // 25
+let reverseSignResult = singleMathOpp(x: -3, operation: reverseSign)
+print(reverseSignResult) // 3
+
+
+// more trailing closures with parameters
+func travel(destination: (String) -> Void) {
+    print("I am traveling")
+    destination("Spain")
+    print("I may like it there")
+}
+
+travel { (place: String)  in
+    print("Destination: \(place)")
+}
+/*
+ prints:
+ I am traveling
+ Destination: Spain
+ I may like it there
+ */
+
+
+// combining closures with functions having parameters
+func goSomeWhere(finalDestination: String, method: (String) -> Void) {
+    print("I am going to \(finalDestination)")
+    method(finalDestination)
+    print("And now I'm there...")
+}
+
+goSomeWhere(finalDestination: "New Jersey") { (place: String) in
+    print("I am going to \(place) by means of car.")
+}
+/*
+ prints:
+ I am going to New Jersey
+ I am going to New Jersey by means of car.
+ And now I'm there...
+ */
