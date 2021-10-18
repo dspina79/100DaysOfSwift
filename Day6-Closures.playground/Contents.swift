@@ -169,3 +169,37 @@ goSomeWhere(finalDestination: "New Jersey") { (place: String) in
  I am going to New Jersey by means of car.
  And now I'm there...
  */
+
+
+// Trailing Closure with Return Value
+func mather(action: (Int, Int) -> Int) {
+    print("About to run a method")
+    let result = action(5, 4)
+    print("The result is \(result)")
+}
+
+mather { (x: Int, y: Int) -> Int in
+    return x + y
+}
+/*
+ prints:
+ About to run a method
+ The result is 9
+ */
+
+
+func mather2(x: Int, y: Int, action: (Int, Int) -> Int) -> Int {
+    return action(x, y)
+}
+
+let mather2Result1 = mather2(x: 4, y: 5) { (x: Int, y: Int) in
+    return x * y
+}
+
+
+let mather2Result2 = mather2(x: 4, y: 5) { (x: Int, y: Int) in
+    return x - y
+}
+
+print(mather2Result1) // prints 20
+print(mather2Result2) // prints -1
