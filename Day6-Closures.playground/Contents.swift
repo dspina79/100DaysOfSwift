@@ -203,3 +203,30 @@ let mather2Result2 = mather2(x: 4, y: 5) { (x: Int, y: Int) in
 
 print(mather2Result1) // prints 20
 print(mather2Result2) // prints -1
+
+
+// Shortand Parameters
+func moveX(action: (Int) -> Int) {
+    print("About to move 9")
+    let result = action(9)
+    print("The result is \(result)")
+}
+
+moveX { amt in
+    amt + 2
+}
+
+/*
+ prints:
+ About to move 9
+ The result is 11
+ */
+
+moveX {
+    $0 + 3
+}
+/*
+ prints:
+ About to move 9
+ The result is 12
+ */
