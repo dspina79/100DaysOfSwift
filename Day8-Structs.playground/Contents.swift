@@ -16,3 +16,17 @@ myFirstGame.player2 = "Sean"
 print(myFirstGame.player2) // prints "Sean"
 myFirstGame.gameOver = true
 
+// Computed Properties
+
+struct Human {
+    var name: String
+    var age: Int
+    var isMinor: Bool {
+        return age < 18
+    }
+}
+
+let bob = Human(name: "Bob", age: 82)
+let charlie = Human(name: "Charlie", age: 12)
+print(bob.isMinor) // prints false
+print(charlie.isMinor) // prints true
