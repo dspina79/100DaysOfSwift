@@ -230,3 +230,20 @@ moveX {
  About to move 9
  The result is 12
  */
+
+
+// Multiple Parameter Names
+func describePerson(name: String, age: Int, handler: (String, Int) -> String) {
+    print("\(name) has entered the room.")
+    let result = handler(name, age)
+    print("The say, \(result)")
+}
+
+describePerson(name: "Dean", age: 25) {
+    "\($0) is \($1) years old"
+}
+/*
+ prints:
+ Dean has entered the room.
+ The say, Dean is 25 years old
+ */
