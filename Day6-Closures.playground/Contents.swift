@@ -257,3 +257,41 @@ func generateMather() -> (Int, Int) -> Int {
 
 let generatedMather = generateMather()
 print(generatedMather(3, 5)) // prints 8
+
+
+// Capturing Values in the Closure
+func authenticator(isTest: Bool) -> (String, String) -> Bool {
+    var realCounter: Int = 0
+    var testCounter: Int = 0
+    
+    if isTest {
+        return {
+            testCounter += 1
+            let result = ($0 != $1)
+            print("The result is \(result) and the counters are real: \(realCounter), test: \(testCounter)")
+            return result
+        }
+    } else {
+        return {
+           realCounter += 1
+           let result = ($0 == "admin" && $1 == "password")
+           print("The result is \(result) and the counters are real: \(realCounter), test: \(testCounter)")
+           return result
+        }
+    }
+}
+
+let authTest = authenticator(isTest: true)
+let authProd = authenticator(isTest: false)
+authTest("user", "user")
+authProd("user", "user")
+authTest("user", "pass")
+authProd("admin", "password")
+
+/*
+ prints:
+ The result is false and the counters are real: 0, test: 1
+ The result is false and the counters are real: 1, test: 0
+ The result is true and the counters are real: 0, test: 2
+ The result is true and the counters are real: 2, test: 0
+ */
