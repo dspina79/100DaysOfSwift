@@ -295,3 +295,10 @@ authProd("admin", "password")
  The result is true and the counters are real: 0, test: 2
  The result is true and the counters are real: 2, test: 0
  */
+
+let anotherSimpleClosure = {() -> String in
+    return "It can still be as simple as this!"
+}
+
+anotherSimpleClosure()
+
