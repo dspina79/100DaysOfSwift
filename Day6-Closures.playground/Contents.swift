@@ -247,3 +247,13 @@ describePerson(name: "Dean", age: 25) {
  Dean has entered the room.
  The say, Dean is 25 years old
  */
+
+// Returning a Closure
+func generateMather() -> (Int, Int) -> Int {
+    return {
+        $0 + $1
+    }
+}
+
+let generatedMather = generateMather()
+print(generatedMather(3, 5)) // prints 8
