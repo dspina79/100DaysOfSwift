@@ -58,3 +58,16 @@ homework.tasksCompleted += 1
  The project is now 80.0% done.
  The project is now 100.0% done.
  */
+
+
+// Methods in Structs
+struct City {
+    var population: Int
+    func collectTaxes() -> Int {
+        return population * 1000
+    }
+}
+
+let rochester = City(population: 750000)
+let taxes = rochester.collectTaxes()
+print(taxes) // prints 750000000
