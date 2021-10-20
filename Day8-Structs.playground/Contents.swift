@@ -71,3 +71,32 @@ struct City {
 let rochester = City(population: 750000)
 let taxes = rochester.collectTaxes()
 print(taxes) // prints 750000000
+
+
+// Mutating Methods
+struct Cat {
+    var name: String
+    var originalName = ""
+    
+    mutating func changeName(newName: String) {
+        if originalName == "" {
+            originalName = name
+        }
+        name = newName
+    }
+    
+    mutating func resetName() {
+        if originalName != "" {
+            name = originalName
+        }
+    }
+}
+
+// to mutate values, the instance must be a var
+var cat1 = Cat(name: "Percy")
+print(cat1.name) // prints Percy
+cat1.changeName(newName: "Precious")
+print(cat1.name) // prints Precious
+cat1.resetName()
+print(cat1.name) // prints Percy
+
