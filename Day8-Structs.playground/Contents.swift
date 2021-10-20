@@ -30,3 +30,31 @@ let bob = Human(name: "Bob", age: 82)
 let charlie = Human(name: "Charlie", age: 12)
 print(bob.isMinor) // prints false
 print(charlie.isMinor) // prints true
+
+// Property Observers with didSet and willSet
+
+struct Project {
+    var name: String
+    var numberOfTasks: Double = 1
+    var tasksCompleted: Double = 0 {
+        didSet {
+            let percentComplete = (tasksCompleted / numberOfTasks) * 100.0
+            print("The project is now \(percentComplete)% done.")
+        }
+    }
+}
+
+var homework = Project(name: "My Homework", numberOfTasks: 5)
+homework.tasksCompleted += 1
+homework.tasksCompleted += 1
+homework.tasksCompleted += 1
+homework.tasksCompleted += 1
+homework.tasksCompleted += 1
+/*
+ prints:
+ The project is now 20.0% done.
+ The project is now 40.0% done.
+ The project is now 60.0% done.
+ The project is now 80.0% done.
+ The project is now 100.0% done.
+ */
