@@ -91,3 +91,24 @@ var brad = Volunteer(name: "Brad", group: "recycling")
 var emma = Volunteer(name: "Emma", group: "conservation")
 print(Volunteer.count) // prints 2
 Volunteer.workTogether(vol1: brad, vol2: emma) // prints Brad and Emma are working together.
+
+
+// Accessing Properties
+// using public and private
+
+struct Person {
+    private var fn: String
+    private var ln: String
+    
+    init(firstName: String, lastName: String) {
+        self.fn = firstName
+        self.ln = lastName
+    }
+    
+    public func toString() -> String {
+        return "\(self.fn) \(self.ln)"
+    }
+}
+
+let tom = Person(firstName: "Thomas", lastName: "Dorman")
+print(tom.toString()) // prints Thomas Dorman
