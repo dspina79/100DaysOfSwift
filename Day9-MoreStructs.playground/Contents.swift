@@ -33,3 +33,38 @@ var rect = Rectangle(height: 4, width: 5)
 rect.internalColor = "red"
 print(rect.area) // prints 20
 
+// Lazy Properties
+// they will only be instantiated when needed
+
+struct Degree {
+    var level: String
+    var discipline: String
+    
+    init() {
+        level = ""
+        discipline = ""
+        print("Initialized degree.")
+    }
+}
+
+struct Graduate {
+    var name: String
+    var graduationYear: Int
+    lazy var degree = Degree()
+    
+    init(name: String, gradYear: Int) {
+        self.name = name
+        self.graduationYear = gradYear
+        print("End of graduate initialization")
+    }
+}
+
+var tina = Graduate(name: "Tina", gradYear: 2022)
+print("Initialized the 'tina' variable.")
+tina.degree.level = "BS"
+/*
+ prints:
+ End of graduate initialization
+ Initialized the 'tina' variable.
+ Initialized degree.
+ */
