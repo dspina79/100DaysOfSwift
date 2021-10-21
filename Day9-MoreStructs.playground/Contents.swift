@@ -68,3 +68,26 @@ tina.degree.level = "BS"
  Initialized the 'tina' variable.
  Initialized degree.
  */
+
+// Static Variables and Methods
+
+struct Volunteer {
+    static var count: Int = 0
+    var name: String
+    var group: String
+    
+    init(name: String, group: String) {
+        self.name = name
+        self.group = group
+        Volunteer.count += 1
+    }
+    
+    static func workTogether(vol1: Volunteer, vol2: Volunteer) {
+        print("\(vol1.name) and \(vol2.name) are working together.")
+    }
+}
+
+var brad = Volunteer(name: "Brad", group: "recycling")
+var emma = Volunteer(name: "Emma", group: "conservation")
+print(Volunteer.count) // prints 2
+Volunteer.workTogether(vol1: brad, vol2: emma) // prints Brad and Emma are working together.
