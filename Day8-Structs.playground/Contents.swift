@@ -100,3 +100,24 @@ print(cat1.name) // prints Precious
 cat1.resetName()
 print(cat1.name) // prints Percy
 
+
+// Strings are Structs Too
+let myString = "For whom the bell tolls. It tolls for thee."
+// length of string
+print(myString.count) // prints 43
+// sorted
+print(myString.sorted()) // prints [" ", " ", " ", " ", " ", " ", " ", " ", ".", ".", "F", "I", "b", "e", "e", "e", "e", "f", "h", "h", "h", "l", "l", "l", "l", "l", "l", "m", "o", "o", "o", "o", "o", "r", "r", "s", "s", "t", "t", "t", "t", "t", "w"]
+
+// uppercased
+print(myString.uppercased()) // prints FOR WHOM THE BELL TOLLS. IT TOLLS FOR THEE.
+
+// lowercased
+print(myString.lowercased()) // prints for whom the bell tolls. it tolls for thee.
+// determine if the string starts with a set of characters
+print(myString.hasPrefix("For")) // prints  true
+print(myString.hasPrefix("for")) // prints false
+// determine if the string ends with a set of characters
+print(myString.hasSuffix("tolls")) //prints false
+print(myString.hasSuffix("thee.")) //prints true
+// determine if the string contains
+print(myString.contains("bell")) // prints true
