@@ -121,3 +121,22 @@ print(myString.hasSuffix("tolls")) //prints false
 print(myString.hasSuffix("thee.")) //prints true
 // determine if the string contains
 print(myString.contains("bell")) // prints true
+
+// Arrays are also Structs
+var myArray = ["apples", "oranges", "pineapple"]
+// length of the array
+print(myArray.count) // prints 3
+//adding a new element using append
+myArray.append("pears")
+print(myArray.count) // prints 4
+// sorting
+print(myArray.sorted()) // ["apples", "oranges", "pears", "pineapple"]
+// finding elements
+print(myArray.firstIndex(of: "pears")) // prints 3 (optional)
+print(myArray.firstIndex(of: "peaches")) // prints nil
+// contains
+print(myArray.contains("apples")) // prints true
+print(myArray.contains("peaches")) // prints false
+// removal
+myArray.remove(at: 1)
+print(myArray.count) // prints 3
