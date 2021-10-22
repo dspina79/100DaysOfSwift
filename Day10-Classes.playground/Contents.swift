@@ -17,3 +17,16 @@ class Fish {
 
 let nemo = Fish(name: "Nemo", species: "Clown Fish")
 print(nemo.bonyFish) // prints true
+
+
+// Inheritance or Subclassing
+class Goldfish : Fish {
+    init(name: String) {
+        super.init(name: name, species: "Goldfish")
+    }
+}
+
+let moby = Goldfish(name: "Moby")
+print(moby.species) // prints Goldfish
+
+
