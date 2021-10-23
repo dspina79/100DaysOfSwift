@@ -67,3 +67,27 @@ let triangle = Triangle(side1: 3, side2: 5, side3: 4)
 let square = Square(side: 7)
 print(triangle.getPerimiter()) // prints 12
 print(square.getPerimiter()) // prints 28
+
+// Locking Classes from Inheritance with the Final Keyword
+
+class Bird {
+    var name: String
+    var species: String
+    var flightless: Bool = false
+    
+    init(name: String, species: String) {
+        self.name = name
+        self.species = species
+    }
+}
+
+// the Penguin class cannot be inherited
+final class Penguin: Bird {
+    init(name: String) {
+        super.init(name: name, species: "Penguin")
+        self.flightless = true
+    }
+}
+
+let chilly_willy = Penguin(name: "Chilly Willy")
+print(chilly_willy.flightless) // prints true
