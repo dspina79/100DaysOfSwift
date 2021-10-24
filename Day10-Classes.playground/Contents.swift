@@ -91,3 +91,28 @@ final class Penguin: Bird {
 
 let chilly_willy = Penguin(name: "Chilly Willy")
 print(chilly_willy.flightless) // prints true
+
+// Copying Objects
+class Director {
+    var name: String
+    var numberMoviesDirected: Int = 0
+    var numberOfAcademyAwards: Int = 0
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    func printDirectorInfo() {
+        print("\(self.name) - Moves: \(self.numberMoviesDirected); Awards: \(self.numberOfAcademyAwards)")
+    }
+}
+
+let lee = Director(name: "Dustin Lee")
+lee.numberMoviesDirected = 4
+lee.numberOfAcademyAwards = 1
+lee.printDirectorInfo() // prints Dustin Lee - Moves: 4; Awards: 1
+
+let leeCopy = lee // made a reference copy
+leeCopy.numberMoviesDirected += 1
+leeCopy.numberOfAcademyAwards += 1
+lee.printDirectorInfo() // prints "Dustin Lee - Moves: 5; Awards: 2" even though this is the original reference
