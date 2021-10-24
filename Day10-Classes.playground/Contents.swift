@@ -116,3 +116,40 @@ let leeCopy = lee // made a reference copy
 leeCopy.numberMoviesDirected += 1
 leeCopy.numberOfAcademyAwards += 1
 lee.printDirectorInfo() // prints "Dustin Lee - Moves: 5; Awards: 2" even though this is the original reference
+
+// Deinitializers -
+// called when the object is destroyed or no longer needed
+class Dinosaur {
+    var name: String
+    var type: String
+    
+    init(name: String, type: String) {
+        self.name = name
+        self.type = type
+    }
+    
+    func roar() {
+        print("\(self.name), a \(self.type), roars!")
+    }
+    
+    deinit {
+        print("\(self.name) has been destroyed.")
+    }
+}
+for _ in 1...3 {
+    let barney = Dinosaur(name: "Barney", type: "T-Rex")
+    barney.roar()
+    print("After dino is used...")
+}
+/*
+ prints:
+ Barney, a T-Rex, roars!
+ After dino is used...
+ Barney has been destroyed.
+ Barney, a T-Rex, roars!
+ After dino is used...
+ Barney has been destroyed.
+ Barney, a T-Rex, roars!
+ After dino is used...
+ Barney has been destroyed.
+ */
