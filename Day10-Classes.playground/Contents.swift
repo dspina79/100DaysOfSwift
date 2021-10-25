@@ -153,3 +153,27 @@ for _ in 1...3 {
  After dino is used...
  Barney has been destroyed.
  */
+
+
+// Mutability in Classes
+class Person {
+    var firstName: String
+    var lastName: String
+    let birthdate: String // a constant that can't be changed
+    
+    init(firstName first: String, lastName last: String, dob: String) {
+        self.firstName = first
+        self.lastName = last
+        self.birthdate = dob
+    }
+    
+    func changeName(newFirstName: String, newLastName: String) {
+        // no mutating keyword needed
+        self.firstName = newFirstName
+        self.lastName = newLastName
+    }
+}
+
+let bob = Person(firstName: "Robert", lastName: "Williams", dob: "09/24/1980")
+bob.changeName(newFirstName: "Bobby", newLastName: "Williams")
+print(bob.firstName) // prints Bobby
