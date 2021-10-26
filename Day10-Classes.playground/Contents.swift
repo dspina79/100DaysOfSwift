@@ -177,3 +177,52 @@ class Person {
 let bob = Person(firstName: "Robert", lastName: "Williams", dob: "09/24/1980")
 bob.changeName(newFirstName: "Bobby", newLastName: "Williams")
 print(bob.firstName) // prints Bobby
+
+enum Department {
+    case InformationTechnology
+    case HumanResources
+    case ExecutiveTeam
+    case Accounting
+    case Marketing
+    case Sales
+    case Other
+}
+
+class Employee {
+    private static var EmployeeId: Int = 100
+    private var employeeId: Int
+    private var firstName: String
+    private var lastName: String
+    private var department: Department
+    private var manager: Manager? = nil
+    
+    init(firstName: String, lastName: String, department: Department) {
+        self.firstName = firstName
+        self.lastName = lastName
+        self.department = department
+        self.employeeId = Employee.EmployeeId
+        Employee.EmployeeId += 1
+    }
+    
+    func setManager(mgr: Manager?) {
+        self.manager = mgr
+    }
+    
+    func getDetails() -> String {
+        if let managerDetails = self.manager?.getDetails() {
+            return "\(self.lastName), \(self.firstName)... Manager \(managerDetails)"
+        } else {
+            return "\(self.lastName), \(self.firstName)... Manager Unknown"
+        }
+    }
+
+}
+
+class Manager: Employee {
+    
+}
+
+var sharon = Manager(firstName: "Sharon", lastName: "Billings", department: Department.InformationTechnology)
+var thomas = Employee(firstName: "Thomas", lastName: "Birez", department: Department.InformationTechnology)
+thomas.setManager(mgr: sharon)
+print(thomas.getDetails())
