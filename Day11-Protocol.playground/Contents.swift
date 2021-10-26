@@ -49,7 +49,13 @@ protocol Publicator {
     func publish(title: String) -> String
 }
 
-struct SystemAdminBot: Monitorable, FinderKeeper, Publicator {
+// inheriting from other protocols
+protocol MyBot: Monitorable, FinderKeeper, Publicator {}
+
+// the following could also be written as:
+// struct SystemAdminBot: Monitorable, FinderKeeper, Publicator {
+
+struct SystemAdminBot: MyBot {
     var searchParam: String = ""
     var name: String
     
