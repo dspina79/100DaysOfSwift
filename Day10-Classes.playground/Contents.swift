@@ -226,3 +226,5 @@ var sharon = Manager(firstName: "Sharon", lastName: "Billings", department: Depa
 var thomas = Employee(firstName: "Thomas", lastName: "Birez", department: Department.InformationTechnology)
 thomas.setManager(mgr: sharon)
 print(thomas.getDetails())
+// prints Birez, Thomas... Manager Billings, Sharon... Manager Unknown
+
