@@ -158,3 +158,26 @@ ryu.generateAura()
  Generating an aura
  Generating an aura
  */
+
+// Implementing a protocol's method
+
+protocol FightBot {
+    var name: String {get set}
+    var fightingStyle: String {get set}
+    
+    func fight(power: Int) -> String
+}
+
+extension FightBot {
+    func fight(power: Int) -> String {
+        return "\(self.name) is \(self.fightingStyle) with \(power) units of power!"
+    }
+}
+
+struct WrestleBot: FightBot {
+    var name: String
+    var fightingStyle = "wrestling"
+}
+
+let warrior = WrestleBot(name: "The Amazing Warrior")
+print(warrior.fight(power: 10)) // prints The Amazing Warrior is wrestling with 10 units of power!
