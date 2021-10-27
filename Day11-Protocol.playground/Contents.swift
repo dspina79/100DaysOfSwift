@@ -91,3 +91,70 @@ print(sysbot1.publish(title: "Do Androids Dream of Electric Sheep?"))
  Publishing Do Androids Dream of Electric Sheep?
  Do Androids Dream of Electric Sheep? (Published)
  */
+
+
+// Extensions
+
+extension Int {
+    var isEven: Bool {
+        return self % 2 == 0
+    }
+    
+    func cube() -> Int {
+        return self * self * self
+    }
+}
+
+let x = 14
+print(x.isEven) // prints true
+print(x.cube()) // prints 2744
+
+// Protocol Extensions
+protocol WiseBot {
+    var magicSystem: String {get set}
+    func provideWisdom()
+}
+
+struct WizardBot: WiseBot {
+    var name: String
+    var magicSystem: String
+    
+    func provideWisdom() {
+        print("A bird in the hand is worth more than two in the bush...")
+    }
+}
+
+struct MonkBot: WiseBot {
+    var name: String
+    var fightingStyle: String
+    var magicSystem: String
+    
+    func fight() {
+        print("Harduuuken!")
+    }
+    
+    func provideWisdom() {
+        print("There is more to life than the shells we hold.")
+    }
+}
+
+// extending all members who inherit the same protocol
+extension WiseBot {
+    func generateAura() {
+        print("Generating an aura")
+    }
+}
+
+let gandalf = WizardBot(name: "Gandalf", magicSystem: "Arcane")
+let ryu = MonkBot(name: "Ryu", fightingStyle: "Judo", magicSystem: "Kinetic")
+gandalf.provideWisdom()
+ryu.provideWisdom()
+gandalf.generateAura()
+ryu.generateAura()
+/*
+ prints:
+ A bird in the hand is worth more than two in the bush...
+ There is more to life than the shells we hold.
+ Generating an aura
+ Generating an aura
+ */
