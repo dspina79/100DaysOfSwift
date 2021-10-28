@@ -181,3 +181,22 @@ struct WrestleBot: FightBot {
 
 let warrior = WrestleBot(name: "The Amazing Warrior")
 print(warrior.fight(power: 10)) // prints The Amazing Warrior is wrestling with 10 units of power!
+
+// Coming back to basics for protocol oriented programming
+protocol Identifiable {
+    var id: String {get set}
+    func identify()
+}
+
+extension Identifiable {
+    func identify() {
+        print("My id is \(self.id)")
+    }
+}
+
+struct Thingy: Identifiable {
+    var id: String
+}
+
+let thing1 = Thingy(id: "Thing One")
+thing1.identify() // prints My id is Thing One
