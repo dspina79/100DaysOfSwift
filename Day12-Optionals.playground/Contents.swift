@@ -19,3 +19,15 @@ if let mname = middleName {
 }
 // prints No middle name was supplied.
 
+// Optionals in a Struct
+
+struct MaybePerson {
+    var firstName: String?
+    var lastName: String?
+    var age: Int = 0
+}
+
+var bobby = MaybePerson()
+bobby.firstName = "Robert"
+bobby.lastName = "Robertson"
+print(bobby.firstName!) // unwraps explicitly
