@@ -94,3 +94,31 @@ let favoriteFlavors = ["Ben" : "Vanilla", "John": "Chocolate", "Lisa": "Strawber
 let lisasFavorite = favoriteFlavors["Lisa"]?.lowercased();
 let billysFavorite = favoriteFlavors["Billy"]?.lowercased() // nill
 print(lisasFavorite!) // prints "strawberry"
+
+// Optional Try (try?)
+// makes throwing functions act as optionals
+
+enum PasswordError: Error {
+    case tooSmall
+}
+func checkPassword(username: String, password: String) throws -> Bool {
+    if password.count < 5 {
+        throw PasswordError.tooSmall
+    }
+    return true
+}
+
+if let passwordResult = try? checkPassword(username: "simpleuser", password: "p123") {
+    print("Password result is \(passwordResult)")
+} else {
+    print("Password failed")
+}
+// prints Password failed
+
+// let's try it again
+if let passwordResult2 = try? checkPassword(username: "simpleuser", password: "password123") {
+    print("Password result is \(passwordResult2)")
+} else {
+    print("Password failed")
+}
+// prints Password result is true
