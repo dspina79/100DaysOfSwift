@@ -56,3 +56,10 @@ var churchLocation: String! = nil
 // no need for guard let
 churchLocation = "Bridgewater, CT"
 print(churchLocation)
+
+
+// Nil Coallessing
+var grainWeight: Int?
+var minimalWeight: Int = grainWeight ?? 100 // 100
+grainWeight = 39
+minimalWeight = grainWeight ?? 100 // 39
