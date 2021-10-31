@@ -50,3 +50,9 @@ greet(noone) // prints Hello, nobody
 
 let reallySomthing: String? = "Bread"
 print(reallySomthing!) // force unwraps
+
+// Implictly Unwrapped Optionals
+var churchLocation: String! = nil
+// no need for guard let
+churchLocation = "Bridgewater, CT"
+print(churchLocation)
