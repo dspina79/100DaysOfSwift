@@ -31,3 +31,22 @@ var bobby = MaybePerson()
 bobby.firstName = "Robert"
 bobby.lastName = "Robertson"
 print(bobby.firstName!) // unwraps explicitly
+
+// Using guard let to unwrap initially
+func greet(_ name: String?) {
+    guard let personName = name else {
+        print("Hello, nobody")
+        return
+    }
+    
+    print("Hello, \(personName)")
+}
+
+greet(nil) // prints Hello, nobody
+greet("Brian") // prints Hello, Brian
+
+let noone: String? = nil
+greet(noone) // prints Hello, nobody
+
+let reallySomthing: String? = "Bread"
+print(reallySomthing!) // force unwraps
