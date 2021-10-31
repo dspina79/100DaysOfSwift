@@ -63,3 +63,13 @@ var grainWeight: Int?
 var minimalWeight: Int = grainWeight ?? 100 // 100
 grainWeight = 39
 minimalWeight = grainWeight ?? 100 // 39
+
+func newGreeting(name: String?) -> String {
+    return "Hello, " + (name ?? "Someone")
+}
+
+var name1: String?
+var name2: String? = "Dean"
+print(newGreeting(name: name1)) // prints Hello, Someone
+print(newGreeting(name: name2)) // prints Hello, Dean
+
