@@ -73,3 +73,24 @@ var name2: String? = "Dean"
 print(newGreeting(name: name1)) // prints Hello, Someone
 print(newGreeting(name: name2)) // prints Hello, Dean
 
+// Optional Chaining
+struct ThingWithNames {
+    var firstName: String?
+    var lastName: String?
+}
+
+var toby = ThingWithNames(firstName: "Toby", lastName: "Wasserman")
+var cher = ThingWithNames()
+cher.firstName = "Cher"
+let gilligan: ThingWithNames? = nil
+let gilliganLastName = gilligan?.lastName?.uppercased() // nil
+
+let upperToby = toby.firstName?.uppercased()
+let upperCher = cher.lastName?.uppercased() // will be nil
+print(upperCher ?? "No name provided") // prints No name provided
+print(upperToby!) // prints "TOBY"
+
+let favoriteFlavors = ["Ben" : "Vanilla", "John": "Chocolate", "Lisa": "Strawbery"]
+let lisasFavorite = favoriteFlavors["Lisa"]?.lowercased();
+let billysFavorite = favoriteFlavors["Billy"]?.lowercased() // nill
+print(lisasFavorite!) // prints "strawberry"
