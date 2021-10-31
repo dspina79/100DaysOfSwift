@@ -122,3 +122,39 @@ if let passwordResult2 = try? checkPassword(username: "simpleuser", password: "p
     print("Password failed")
 }
 // prints Password result is true
+
+// Failable Initializers
+// returns nil if there is an error in initialization
+
+struct UserCredentials {
+    var username: String
+    var password: String
+    
+    init?(username: String, password: String) {
+        if (username.isEmpty || password.isEmpty) {
+            return nil
+        } else {
+            self.username = username
+            self.password = password
+        }
+    }
+    
+    func getConcatenation() -> String {
+        return "\(self.username):\(self.password)"
+    }
+}
+
+if let usercred1 = UserCredentials(username: "", password: "") {
+    print("User credential created, \(usercred1.getConcatenation())")
+} else {
+    print("Failed to create credential")
+}
+// prints Failed to create credential
+
+
+if let usercred2 = UserCredentials(username: "user1", password: "password123") {
+    print("User credential created, \(usercred2.getConcatenation())")
+} else {
+    print("Failed to create credential")
+}
+// prints User credential created, user1:password123
