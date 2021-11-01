@@ -158,3 +158,34 @@ if let usercred2 = UserCredentials(username: "user1", password: "password123") {
     print("Failed to create credential")
 }
 // prints User credential created, user1:password123
+
+// Typcasting with as?
+
+// building some simple classes
+
+class Person {}
+class Employee: Person {}
+class Manager: Employee {
+    func meet(with teamMember: String) {
+        print("Manager meeting with \(teamMember)")
+    }
+}
+
+let persons = [Person(), Manager(), Employee(), Manager(), Person()]
+
+for person in persons {
+    if let mgr = person as? Manager {
+        mgr.meet(with: "Steve")
+    }
+    if let per = person as? Employee {
+        print("This is an employee")
+    }
+}
+
+/*
+ prints:
+ Manager meeting with Steve
+ This is an employee
+ This is an employee
+ Manager meeting with Steve
+ This is an employee */
