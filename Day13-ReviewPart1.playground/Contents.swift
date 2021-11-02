@@ -38,4 +38,15 @@ stringA == stringB // false
 stringA != stringB // true
 stringA == "ABC" // true
 
+// String Interpolation
+let personName = "Johnny"
+
+let greeting = "Hello, \(personName)" // Hello Johnny
+let personAge = 30
+let personInfo = "The person's name is \(personName) and is \(personAge) years old." //The Person's name is Johnny and is 30 years old.
+
+let x1 = 30
+let y1 = 20
+let answer = "The sum of \(x1) and \(y1) is \(x1 + y1)" // The sum of 30 and 20 is 50
+
 
