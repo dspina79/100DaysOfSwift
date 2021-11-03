@@ -50,3 +50,26 @@ let y1 = 20
 let answer = "The sum of \(x1) and \(y1) is \(x1 + y1)" // The sum of 30 and 20 is 50
 
 
+// Arrays
+let myCollection: [Int] = [4, 3, 5, 10, 48842, 38]
+print(myCollection[3]) // prints 10
+for x in myCollection {
+        print(x, separator: " ", terminator: "-")
+} // prints 4-3-5-10-48842-38-
+
+// handling arrays with any type of data
+let myMixCollection: [Any] = ["Don", 39, false, 2389.234, "Things"]
+for x in myMixCollection {
+        print(x, separator: " ", terminator: "-")
+} // prints Don-39-false-2389.234-Things-
+
+// instantiating an array to begin collection/management
+// generates an empty array
+var myFavoriteSongs = [String]()
+myFavoriteSongs.append("Bohemian Rhapsody")
+myFavoriteSongs.append("Life on Mars")
+myFavoriteSongs.append("It's Only Make Believe")
+myFavoriteSongs += ["Freedom Fighters"]
+print(myFavoriteSongs.count) //prints 4
+
+
