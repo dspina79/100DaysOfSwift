@@ -73,3 +73,53 @@ myFavoriteSongs += ["Freedom Fighters"]
 print(myFavoriteSongs.count) //prints 4
 
 
+// Dictionaries
+var personData = ["FirstName": "Dean", "LastName": "Smith"];
+print(personData["LastName"]!) // prints optional "Smith"
+
+if let lastName = personData["LastName"] {
+    print(lastName)
+} // prints Smith
+
+var simpsonAges = Dictionary<String, Int>()
+simpsonAges["Bart"] = 10
+simpsonAges["Lisa"] = 8
+simpsonAges["Maggie"] = 0
+simpsonAges["Homer"] = 38
+simpsonAges["Marge"] = 38
+
+for key in simpsonAges.keys {
+    print("\(key) is \(simpsonAges[key]!) years old.")
+}
+/*
+ prints:
+ Marge is 38 years old.
+ Homer is 38 years old.
+ Bart is 10 years old.
+ Maggie is 0 years old.
+ Lisa is 8 years old.
+ */
+
+// Conditional Statements and Logic Operators
+
+let x2 = 40
+let y3 = 60
+
+if x2 > y3 {
+    print("X is greater or equal to y")
+} else if x2 == y3 {
+    print("X is equal to y")
+} else {
+    print("X is less than y")
+} // prints X is less than y
+
+
+// Switch
+let personName1 = "Shelly"
+
+switch personName1 {
+case "Brian": print("I can't believe Brian made it")
+case "Shelly": fallthrough
+case "Helen": print("Either Shelly or Helen are here")
+default: print("Who the heck is this?")
+} // prints Who the heck is this?
