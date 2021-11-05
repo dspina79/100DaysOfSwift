@@ -160,3 +160,65 @@ for x in 0...12 {
  0    11    22    33    44    55    66    77    88    99    110    121    132
  0    12    24    36    48    60    72    84    96    108    120    132    144
  */
+
+for _ in 1..<4 {
+    print("Thing")
+}
+/*
+ prints:
+ Thing
+ Thing
+ Thing
+ */
+
+let bandMembers = ["Freddy", "Brian", "Roger", "John"]
+for member in bandMembers {
+    print("One of the band members is \(member)")
+}
+/*
+ prints:
+ One of the band members is Freddy
+ One of the band members is Brian
+ One of the band members is Roger
+ One of the band members is John
+ */
+
+// While Loops
+
+let maxIterations = 12
+var iterations = 3
+while iterations < maxIterations {
+    iterations += 3
+    print("\(iterations)")
+}
+/*
+ prints:
+ 6
+ 9
+ 12
+*/
+
+// Repeat.. While
+var z = 38
+repeat {
+    print(z)
+} while (z != 38)
+// prints 38
+
+let otherBand = ["Bosco", "Richie", "Annie", "Darth", "Jackie"]
+for otherMember in otherBand {
+    if otherMember.starts(with: "B") {
+        continue
+    }
+    
+    if otherMember == "Darth" {
+        break
+    }
+    
+    print("\(otherMember)")
+}
+/*
+ prints:
+ Richie
+ Annie
+ */
