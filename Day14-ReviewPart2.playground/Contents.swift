@@ -21,4 +21,14 @@ func add(_ x: Int, _ y: Int) -> Int {
 }
 
 print(add(3, 10)) // prints 13
-print(add(239, 882)) // prints 13
+print(add(239, 882)) // prints 1121
+
+
+// Optionals
+var triangleArea: Int? = nil
+triangleArea = 3
+// no declared unwrapping
+print(triangleArea) // prints Optional(3)
+
+// explicit unwrapping
+print(triangleArea!) // prints 3
