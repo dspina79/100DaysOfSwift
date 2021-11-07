@@ -32,3 +32,20 @@ print(triangleArea) // prints Optional(3)
 
 // explicit unwrapping
 print(triangleArea!) // prints 3
+
+func greetOptional(_ to: String?) -> String? {
+    guard let to = to else {
+        return nil
+    }
+    
+    return "Hello, \(to)"
+}
+
+print(greetOptional("Dean")) // prints Optional("Hello, Dean")
+print(greetOptional(nil)) // prints nil
+
+if let myGreeting = greetOptional("John") {
+    print(myGreeting)
+} else {
+    print("Hello, X")
+} // prints Hello, John
