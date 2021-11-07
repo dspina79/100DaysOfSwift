@@ -49,3 +49,22 @@ if let myGreeting = greetOptional("John") {
 } else {
     print("Hello, X")
 } // prints Hello, John
+
+func brutePower(base: Int, power: Int?) -> Int {
+    guard let power = power else {
+        return base
+    }
+    
+    var vBase = base
+    for _ in 1..<power {
+        vBase *= base
+    }
+    
+    return vBase
+}
+
+print(brutePower(base: 10, power: nil)) // prints 10
+print(brutePower(base: 10, power: 4)) // prints 10000
+print(brutePower(base: 2, power: 8)) // prints 256
+print(brutePower(base: 2, power: nil)) // prints 2
+
