@@ -55,7 +55,7 @@ func brutePower(base: Int, power: Int?) -> Int {
         return base
     }
     
-    var vBase = base
+    var vBase = base  // net a mutating variable
     for _ in 1..<power {
         vBase *= base
     }
@@ -67,4 +67,14 @@ print(brutePower(base: 10, power: nil)) // prints 10
 print(brutePower(base: 10, power: 4)) // prints 10000
 print(brutePower(base: 2, power: 8)) // prints 256
 print(brutePower(base: 2, power: nil)) // prints 2
+
+// Optional Chaining and Nil Coellessing
+let optionalString: String? = "Tapioca"
+let optionalString2: String? = nil
+
+let count = optionalString?.count ?? 0
+let count2 = optionalString2?.count ?? 0
+
+print(count) // prints 7
+print(count2) // prints 0
 
