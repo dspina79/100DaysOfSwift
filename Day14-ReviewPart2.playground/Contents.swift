@@ -78,3 +78,21 @@ let count2 = optionalString2?.count ?? 0
 print(count) // prints 7
 print(count2) // prints 0
 
+// Enumerations
+enum Season {
+    case FALL
+    case WINTER
+    case SPRING
+    case SUMMER
+}
+
+let currentSeason = Season.FALL
+
+switch currentSeason {
+case .FALL: print("Leaves falling")
+case .SPRING: print("Blossoms blooming")
+case .SUMMER: print("Hot hot hot")
+case .WINTER: print("Snow and cold")
+}
+// prints Leaves falling
+
