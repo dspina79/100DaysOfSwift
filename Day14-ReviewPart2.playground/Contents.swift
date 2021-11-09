@@ -96,3 +96,33 @@ case .WINTER: print("Snow and cold")
 }
 // prints Leaves falling
 
+enum Grades {
+    case A, B, C, D, F
+}
+
+let myGrade = Grades.B
+
+enum WeatherType {
+    case Sunny
+    case Raining(precipitation: Int)
+    case Snowing(accumulation: Int)
+    case Windy(speed: Int)
+    case Cloudy
+}
+
+let currentWeather = WeatherType.Raining(precipitation: 1)
+switch currentWeather {
+case .Windy(let speed): print("It's windy with a speed of \(speed)")
+case .Raining(let amt): print("It's raning with an accumulation of \(amt) inches")
+case .Snowing(let amt): print("It's snowing with an accumulation of \(amt) inches")
+case .Cloudy: print("It's cloudy!")
+case .Sunny: print("Sun's out!")
+}
+// prints It's raning with an accumulation of 1 inches
+
+switch currentWeather {
+case .Raining(let amt) where amt > 3: print("A flood is coming")
+case .Raining(let amt) where amt >= 1: print("Flood watch")
+default: print("No worry for floods!")
+}
+// prints Flood Watch
