@@ -126,3 +126,69 @@ case .Raining(let amt) where amt >= 1: print("Flood watch")
 default: print("No worry for floods!")
 }
 // prints Flood Watch
+
+
+// Struts
+struct TeamMember {
+    var firstName: String
+    var lastName: String
+    var team: String
+    var level: Int = 1
+    
+    mutating func increaseLevel() {
+        self.level += 1
+    }
+}
+
+var tim = TeamMember(firstName: "Tim", lastName: "Lewis", team: "Alpha", level: 3)
+
+// copying (not making reference copies)
+var timCopy = tim
+timCopy.increaseLevel()
+timCopy.team = "Beta"
+
+print(tim)
+print(timCopy)
+
+/*
+ prints:
+ 
+ TeamMember(firstName: "Tim", lastName: "Lewis", team: "Alpha", level: 3)
+ TeamMember(firstName: "Tim", lastName: "Lewis", team: "Beta", level: 4)
+ */
+
+// Classes
+class Human {
+    var firstName: String = ""
+    var lastName: String = ""
+    var fullName: String {
+        self.firstName + " " + self.lastName
+    }
+    private var age: Int
+    private var numberBirthdays: Int = 0
+    
+    init(firstName: String, lastName: String, age: Int) {
+        self.firstName = firstName
+        self.lastName = lastName
+        self.age = age
+    }
+    
+    func birthday() {
+        self.age += 1
+        self.numberBirthdays += 1
+    }
+    
+    func describe() -> String {
+        return "\(self.fullName) is \(age) years old and has celebrated \(numberBirthdays) birthdays with us."
+    }
+}
+
+var steve = Human(firstName: "Steve", lastName: "Lewis", age: 32)
+
+for _ in 1...3 {
+    steve.birthday()
+}
+print(steve.describe())
+// ^^ prints Steve Lewis is 35 years old and has celebrated 3 birthdays with us.
+
+
