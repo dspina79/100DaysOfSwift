@@ -191,4 +191,20 @@ for _ in 1...3 {
 print(steve.describe())
 // ^^ prints Steve Lewis is 35 years old and has celebrated 3 birthdays with us.
 
+class Student: Human {
+    var major: String
+    
+    init(firstName: String, lastName: String, age: Int, major: String) {
+        self.major = major
+        super.init(firstName: firstName, lastName: lastName, age: age)
+    }
+    
+    override func describe() -> String {
+        return "\(self.fullName) is a student with the major \(self.major)"
+    }
+}
+
+var beatrice = Student(firstName: "Beatrice", lastName: "Lewis", age: 19, major: "Engineering")
+print(beatrice.describe())
+// ^^ prints Beatrice Lewis is a student with the major Engineering
 
