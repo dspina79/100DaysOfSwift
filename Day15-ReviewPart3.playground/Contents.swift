@@ -48,3 +48,30 @@ class Student {
 let bianca = Student(firstName: "Bianca", lastName: "Derry", major: "Physics")
 let cheryl = Student(firstName: "Cheryl", lastName: "Motti", major: "Economics")
 Student.printStudentBody() // prints There are 2 students in the school
+
+
+// Access Control
+
+class Professor {
+    private var firstName: String
+    private var lastName: String
+    private var concentrations: [String] = [String]()
+    
+    init(firstName: String, lastName: String) {
+        self.firstName = firstName
+        self.lastName = lastName
+    }
+    
+    func addConcentration(_ concentration: String) {
+        self.concentrations.append(concentration)
+    }
+    
+    func getConcentrations() -> [String] {
+        return self.concentrations
+    }
+}
+
+let drlarry = Professor(firstName: "Larry", lastName: "Oldonson")
+drlarry.addConcentration("Biology")
+drlarry.addConcentration("Physics")
+print(drlarry.getConcentrations().count) // prints 2
