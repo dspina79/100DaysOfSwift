@@ -25,3 +25,26 @@ programmer.annualSalary = 80000
  About to change the annual salary to 80000.0
  The salaray has been changed to 80000.0
  */
+
+// Static Properties and Methods
+class Student {
+    static var numberOfStudents = 0
+    var firstName: String
+    var lastName: String
+    var major: String
+    
+    init(firstName: String, lastName: String, major: String) {
+        self.major = major
+        self.firstName = firstName
+        self.lastName = lastName
+        Student.numberOfStudents += 1
+    }
+    
+    static func printStudentBody() {
+        print("There are \(Student.numberOfStudents) students in the school.")
+    }
+}
+
+let bianca = Student(firstName: "Bianca", lastName: "Derry", major: "Physics")
+let cheryl = Student(firstName: "Cheryl", lastName: "Motti", major: "Economics")
+Student.printStudentBody() // prints There are 2 students in the school
