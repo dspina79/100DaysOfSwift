@@ -131,3 +131,17 @@ for album in albums {
  Queen: Live at Wembley 85
  Music LIVE: Queen: Live at Wembley 85
  */
+
+for al in albums {
+    if let studio = al as? StudioAlbum {
+        print("\(studio.name) as a Studio album")
+    } else {
+        print("It's something else")
+    }
+}
+
+/*
+ prints:
+ A Night at the Opera as a Studio album
+ It's something else
+ */
