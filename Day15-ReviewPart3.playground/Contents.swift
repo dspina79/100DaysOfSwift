@@ -83,6 +83,10 @@ class Album {
     init(name: String) {
         self.name = name
     }
+    
+    func describe() -> String {
+        return "A regular LP: \(self.name)"
+    }
 }
 
 class StudioAlbum: Album {
@@ -92,4 +96,38 @@ class StudioAlbum: Album {
         self.studioName = studio
         super.init(name: name)
     }
+    override func describe() -> String {
+        return "A classy studio album: \(self.name)"
+    }
 }
+
+class LiveAlbum: Album {
+    var location: String
+    
+    init(name: String, location: String) {
+        self.location = location
+        super.init(name: name)
+    }
+    
+    override func describe() -> String {
+        return "Music LIVE: \(self.name)"
+    }
+}
+
+var nightAtOpera = StudioAlbum(name: "A Night at the Opera", studio: "Apple Records")
+var wembley85 = LiveAlbum(name: "Queen: Live at Wembley 85", location: "Wembley Stadium")
+
+var albums: [Album] = [nightAtOpera, wembley85]
+
+for album in albums {
+    print(album.name)
+    print(album.describe())
+}
+
+/*
+ prints:
+ A Night at the Opera
+ A classy studio album: A Night at the Opera
+ Queen: Live at Wembley 85
+ Music LIVE: Queen: Live at Wembley 85
+ */
