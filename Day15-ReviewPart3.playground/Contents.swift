@@ -75,3 +75,21 @@ let drlarry = Professor(firstName: "Larry", lastName: "Oldonson")
 drlarry.addConcentration("Biology")
 drlarry.addConcentration("Physics")
 print(drlarry.getConcentrations().count) // prints 2
+
+// Typecasting and Polymorphism
+class Album {
+    var name: String
+    
+    init(name: String) {
+        self.name = name
+    }
+}
+
+class StudioAlbum: Album {
+    var studioName: String
+    
+    init(name: String, studio: String) {
+        self.studioName = studio
+        super.init(name: name)
+    }
+}
