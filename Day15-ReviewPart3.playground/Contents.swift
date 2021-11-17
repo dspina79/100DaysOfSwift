@@ -145,3 +145,31 @@ for al in albums {
  A Night at the Opera as a Studio album
  It's something else
  */
+
+// Closures
+
+func runClosure(name: String, action: (String) -> Void) {
+    print("The name is \(name)")
+    print("Running closure now")
+    action(name)
+    print("Ran closure")
+}
+
+runClosure(name: "Bingo") { name in
+    print("Closure running \(name)")
+}
+
+/*
+ prints:
+ The name is Bingo
+ Running closure now
+ Closure running Bingo
+ Ran closure
+ */
+
+let vw = UIView()
+UIView.animate(withDuration: 0.5, animations: {
+    vw.alpha = 0
+})
+
+
