@@ -10,7 +10,7 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    func simpleAdd(_ x: Int, _y: Int) -> Int {
+    func simpleAdd(_ x: Int, _ y: Int) -> Int {
         return x + y
     }
 
