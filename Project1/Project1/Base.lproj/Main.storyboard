@@ -54,14 +54,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dUd-OB-OSs">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dUd-OB-OSs">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GE0-dV-pr6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dUd-OB-OSs" firstAttribute="centerY" secondItem="ESd-ab-gYC" secondAttribute="centerY" id="8c6-8B-WF1"/>
+                            <constraint firstItem="dUd-OB-OSs" firstAttribute="centerX" secondItem="ESd-ab-gYC" secondAttribute="centerX" id="Jcs-Qb-TOu"/>
+                            <constraint firstItem="dUd-OB-OSs" firstAttribute="top" secondItem="ESd-ab-gYC" secondAttribute="topMargin" constant="-44" id="LN2-Lr-t09"/>
+                            <constraint firstItem="dUd-OB-OSs" firstAttribute="leading" secondItem="GE0-dV-pr6" secondAttribute="leading" id="bW2-U6-RY9"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="dUd-OB-OSs" id="z2D-4r-Q2v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZBE-UU-9E0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
