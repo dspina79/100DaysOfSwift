@@ -28,6 +28,9 @@ class ViewController: UITableViewController {
             }
         }
         print(pictures)
+        title = "Storm Viewer"
+        // show large titles across the app
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     // identifies the number of rows to display
