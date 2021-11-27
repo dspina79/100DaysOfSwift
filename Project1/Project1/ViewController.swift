@@ -22,12 +22,11 @@ class ViewController: UITableViewController {
         let items = try! fm.contentsOfDirectory(atPath: path)
         
         // loop filtering
-        for item in items {
+        for item in items.sorted() {
             if item.hasPrefix("nssl") {
                 pictures.append(item)
             }
         }
-        print(pictures)
         title = "Storm Viewer"
         // show large titles across the app
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -41,7 +40,8 @@ class ViewController: UITableViewController {
     // handles loading the information into each cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Picture", for: indexPath)
-        cell.textLabel?.text = pictures[indexPath.row]
+        let modifiedIndex = indexPath.row + 1
+        cell.textLabel?.text = "Picture \(modifiedIndex) of \(pictures.count)"
         return cell
     }
     
