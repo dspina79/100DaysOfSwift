@@ -16,32 +16,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdj-Hg-bIg">
-                                <rect key="frame" x="107" y="100" width="200" height="100"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdj-Hg-bIg">
+                                <rect key="frame" x="95" y="100" width="224" height="114"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="US"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tm0-SL-R4Z">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tm0-SL-R4Z">
                                 <rect key="frame" x="107" y="230" width="200" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="UK"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvL-QW-fNZ">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fvL-QW-fNZ">
                                 <rect key="frame" x="107" y="360" width="200" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="Spain"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="fvL-QW-fNZ" firstAttribute="top" secondItem="Tm0-SL-R4Z" secondAttribute="bottom" constant="30" id="BGW-iB-3HJ"/>
+                            <constraint firstItem="Tm0-SL-R4Z" firstAttribute="centerX" secondItem="Pdj-Hg-bIg" secondAttribute="centerX" id="DOv-8L-wxz"/>
                             <constraint firstItem="Pdj-Hg-bIg" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Eg0-AS-2It"/>
+                            <constraint firstItem="Tm0-SL-R4Z" firstAttribute="top" secondItem="Pdj-Hg-bIg" secondAttribute="bottom" constant="30" id="Mt3-sb-gXb"/>
                             <constraint firstItem="Pdj-Hg-bIg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="XtH-Bl-L83"/>
+                            <constraint firstItem="fvL-QW-fNZ" firstAttribute="centerX" secondItem="Tm0-SL-R4Z" secondAttribute="centerX" id="Z8a-mR-mF4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Wde-3O-tJx"/>
+                    <connections>
+                        <outlet property="button1" destination="Pdj-Hg-bIg" id="Viq-zg-pTA"/>
+                        <outlet property="button2" destination="Tm0-SL-R4Z" id="8co-PJ-z2J"/>
+                        <outlet property="button3" destination="fvL-QW-fNZ" id="Tls-gc-uYw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -67,6 +74,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Spain" width="200" height="100"/>
+        <image name="UK" width="200" height="100"/>
+        <image name="US" width="200" height="100"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
